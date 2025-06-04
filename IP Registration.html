@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP Notification Form - ICT352</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 40px;
+    }
+    .form-wrapper {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .success {
+      margin-top: 20px;
+      color: green;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2>IP Notification Form</h2>
+    <form id="ipForm">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required />
+
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" required />
+
+      <label for="description">Description of IP</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="date">Creation Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="contributors">Contributors (if any)</label>
+      <input type="text" id="contributors" name="contributors" />
+
+      <label for="attachments">Attachments (file names)</label>
+      <input type="text" id="attachments" name="attachments" />
+
+      <button type="submit">Submit Form</button>
+    </form>
+    <div class="success" id="successMessage">
+      ✅ Your IP Notification Form has been submitted (demo only).
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('ipForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
