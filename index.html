@@ -3,64 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IP Notification Form - ICT352</title>
+  <title>ICT352 | IP Notification Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
       margin: 0;
-      padding: 40px;
+      padding: 0;
     }
-    .form-wrapper {
-      max-width: 600px;
-      margin: auto;
+    header {
+      background-color: #002244;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
       background: #fff;
-      padding: 30px;
+      padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     }
     h2 {
+      color: #002244;
       text-align: center;
-      color: #003366;
+      margin-bottom: 30px;
     }
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      font-weight: 700;
+      margin: 15px 0 5px;
     }
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
+      padding: 12px;
+      font-size: 14px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 14px;
+      background: #f9f9f9;
+    }
+    input:focus, textarea:focus {
+      border-color: #0056b3;
+      background: #fff;
+      outline: none;
     }
     button {
-      margin-top: 25px;
+      margin-top: 30px;
       width: 100%;
-      background-color: #007bff;
+      padding: 14px;
+      background-color: #0056b3;
       color: white;
-      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color: #004499;
     }
     .success {
       margin-top: 20px;
-      color: green;
+      color: #2e7d32;
       text-align: center;
+      font-weight: bold;
       display: none;
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="form-wrapper">
-    <h2>IP Notification Form</h2>
+  <header>
+    <h1>ICT352 – Intellectual Property Office</h1>
+    <p>Official IP Notification Form</p>
+  </header>
+
+  <div class="container">
+    <h2>IP Registration Form</h2>
     <form id="ipForm">
       <label for="fullname">Full Name</label>
       <input type="text" id="fullname" name="fullname" required />
@@ -80,12 +117,16 @@
       <label for="attachments">Attachments (file names)</label>
       <input type="text" id="attachments" name="attachments" />
 
-      <button type="submit">Submit Form</button>
+      <button type="submit">Submit IP Notification (Demo)</button>
     </form>
     <div class="success" id="successMessage">
       ✅ Your IP Notification Form has been submitted (demo only).
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 ICT352 Intellectual Property Office. All rights reserved.
+  </footer>
 
   <script>
     document.getElementById('ipForm').addEventListener('submit', function(e) {
